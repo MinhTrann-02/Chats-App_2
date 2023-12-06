@@ -1,3 +1,5 @@
+// const io = require('socket.io-client');
+
 cc.Class({
     extends: cc.Component,
 
@@ -8,8 +10,8 @@ cc.Class({
         messageInput: cc.EditBox,
         avatar: [cc.SpriteFrame]
     },
-
     onLoad() {
+
         this.messageSendNode.active = false;
         this.messageInput.node.on('editing-return', this.onEnter, this);
     },
@@ -30,7 +32,7 @@ cc.Class({
         }
     },
 
-    update() {
-        this.messageInput.focus();
-    }
+    // update() {
+    //     this.messageInput.focus();
+    // }
 });
