@@ -1,17 +1,14 @@
-// const io = require('socket.io-client');
-
 cc.Class({
     extends: cc.Component,
 
     properties: {
         messageSendNode: cc.Node,
-        avatarSprite: cc.Sprite,
-        messageLabel: cc.Label,
         messageInput: cc.EditBox,
-        avatar: [cc.SpriteFrame]
+        messLong: cc.Prefab,
+        messSort: cc.Prefab,
     },
     onLoad() {
-
+        this.messageInput.focus();
         this.messageSendNode.active = false;
         this.messageInput.node.on('editing-return', this.onEnter, this);
     },
@@ -20,19 +17,24 @@ cc.Class({
         if (this.messageInput.string.trim() !== '') {
             this.messageSendNode.active = true;
 
-            const newMessagePrefab = cc.instantiate(this.messageSendNode);
-            this.messageSendNode.active = false;
+            if (this.messageInput.string.length > 45) {
+                const newMessagePrefab = cc.instantiate(this.messLong);
+                newMessagePrefab._children[2]._children[0]._components[0]._string = this.messageInput.string.trim();
+                this.node.addChild(newMessagePrefab);
+                this.messageSendNode.active = false;
 
-            newMessagePrefab._children[0]._components[0]._spriteFrame = this.avatar[10];
-            newMessagePrefab._children[2]._components[0]._string = this.messageInput.string;
-
-            this.node.addChild(newMessagePrefab);
+            } else {
+                const newMessagePrefab = cc.instantiate(this.messSort);
+                newMessagePrefab._children[2]._children[0]._components[0]._string = this.messageInput.string.trim();
+                this.node.addChild(newMessagePrefab);
+                this.messageSendNode.active = false;
+            }
             this.messageInput.string = '';
-            this.messageInput.blur();
+
+            this.scheduleOnce(() => {
+                this.messageInput.blur();
+                this.messageInput.focus();
+            }, 0.1);
         }
     },
-
-    // update() {
-    //     this.messageInput.focus();
-    // }
 });
