@@ -19,16 +19,15 @@ cc.Class({
 
             if (this.messageInput.string.length > 45) {
                 const newMessagePrefab = cc.instantiate(this.messLong);
-                newMessagePrefab._children[2]._children[0]._components[0]._string = this.messageInput.string.trim();
+                newMessagePrefab._children[1]._children[0]._components[0]._string = this.messageInput.string.trim();
                 this.node.addChild(newMessagePrefab);
-                this.messageSendNode.active = false;
 
             } else {
                 const newMessagePrefab = cc.instantiate(this.messSort);
-                newMessagePrefab._children[2]._children[0]._components[0]._string = this.messageInput.string.trim();
+                newMessagePrefab._children[1]._children[0]._components[0]._string = this.messageInput.string.trim();
                 this.node.addChild(newMessagePrefab);
-                this.messageSendNode.active = false;
             }
+            this.messageSendNode.active = false;
             this.messageInput.string = '';
 
             this.scheduleOnce(() => {
