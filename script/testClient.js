@@ -1,12 +1,15 @@
 const { io } = require("socket.io-client");
 
-const uri = "http://172.16.1.41:3000";
+const uri = "http://192.168.1.10:3000";
 const socket = io(uri);
-const message = "";
+const message = "baby kajima";
+const iconOptions = ["🙂", "😭", "😍", "😂", "👍", "👎"];
+
 const data = {
     username: 'User123',
     avatarOption: '1',
-    msg: message
+    msg: iconOptions[2] 
+    // msg: message
 };
 
 socket.on("userConnected", (userDataInput) => {
@@ -17,7 +20,6 @@ socket.on("receive", (data) => {
     console.log(data);
 });
 
-socket.emit('register', data );
+socket.emit('register', data);
 socket.emit('send', data);
-// socket.emit('disconnect', data )
-// socket.emit('send','Minh bede');
+// socket.emit('send', message);
