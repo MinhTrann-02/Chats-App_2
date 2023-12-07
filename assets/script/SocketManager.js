@@ -1,17 +1,20 @@
 const io = require('socket.io-client');
 
+
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        serverUrl: 'http://172.16.1.41:3000',
+        // serverUrl: 'http://172.16.1.41:3000',
+        serverUrl: 'http://192.168.1.36:3000',
+
     },
 
     onLoad() {
         this.connectToServer();
     },
 
-    onDestroy() {
+    onDestroy() { 
         if (this.socket) {
             this.socket.disconnect();
         }
@@ -33,9 +36,9 @@ cc.Class({
         });
     },
 
-    sendToServer(message) {
+    sendToServer(data) {
         if (this.socket && this.socket.connected) {
-            this.socket.emit("send", message);
+            this.socket.emit("send", data);
         }
     },
 

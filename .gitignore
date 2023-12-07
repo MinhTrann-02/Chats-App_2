@@ -11,6 +11,10 @@
 # npm files
 #/////////////////////////////////////////////////////////////////////////////
 
+test_server.js
+test_server.js.meta
+test_client.js
+test_client.js.meta
 npm-debug.log
 node_modules/
 
