@@ -1,21 +1,23 @@
-const ioClient = require('socket.io-client');
-const socket = ioClient('http://localhost:3000');
+const { io } = require("socket.io-client");
 
-socket.on('connect', () => {
-    console.log('Connected to the server');
-    socket.emit('register', { userName: 'TestUser', avatarOption: 'Option1' });
+const uri = "http://172.16.1.41:3000";
+const socket = io(uri);
+const message = "";
+const data = {
+    username: 'User123',
+    avatarOption: '1',
+    msg: message
+};
+
+socket.on("userConnected", (userDataInput) => {
+    console.log(userDataInput);
 });
 
-socket.on('userConnected', (message) => {
-    console.log(`Server says: ${message}`);
+socket.on("receive", (data) => {
+    console.log(data);
 });
 
-socket.on('receive', (data) => {
-    console.log(`Received message from ${data.userName}: ${data.msg}`);
-});
-
-socket.on('disconnect', () => {
-    console.log('Disconnected from the server');
-});
-
-socket.emit("chat" , "hello");
+socket.emit('register', data );
+socket.emit('send', data);
+// socket.emit('disconnect', data )
+// socket.emit('send','Minh bede');
