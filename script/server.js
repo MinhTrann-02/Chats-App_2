@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
     //     console.log(`User ${socket.userData.userName} disconnected`);
     // });
 });
-
+const PORT=process.env.PORT||12345;
 server.listen(12345, () => {
     console.log('Server running at http://localhost:12345');
 });
