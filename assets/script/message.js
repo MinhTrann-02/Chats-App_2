@@ -10,13 +10,14 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        serverUrl: 'http://172.16.0.230:12345',
+        serverUrl: 'https://sv-24fd.onrender.com',
         socketManager: require('SocketManager'),
         sendPrefab: [cc.Prefab],
         recivePrefab: [cc.Prefab],
         connectedPrefab: cc.Prefab,
         messInput: cc.EditBox,
         avatarList: [cc.SpriteFrame],
+        scrollView: cc.ScrollView,
         _myID: null
     },
 
@@ -36,6 +37,7 @@ cc.Class({
             } else {
                 this.newSendPrefab(newMess, data.msg, avt);
             }
+            this.scrollView.scrollToBottom(0.2);
         });
     },
 

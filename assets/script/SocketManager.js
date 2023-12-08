@@ -4,7 +4,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        serverUrl: 'http://172.16.0.230:12345',
+        serverUrl: 'https://sv-24fd.onrender.com',
     },
 
     onLoad() {
