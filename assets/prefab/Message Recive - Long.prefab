@@ -45,7 +45,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 400,
-      "height": 50
+      "height": 130.39999999999998
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -108,8 +108,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 82.56,
-      "height": 22.6
+      "width": 88.06,
+      "height": 45.2
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -118,8 +118,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -140.931,
-      "y": 27.082,
+      "x": -142.931,
+      "y": 65.19999999999999,
       "z": 0
     },
     "_scale": {
@@ -178,8 +178,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -39.069,
-      "y": -29.012,
+      "x": -32.069,
+      "y": -32.012,
       "z": 0
     },
     "_scale": {
@@ -238,7 +238,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "476a1edf-1df5-4c53-857a-b0052b74914c"
+      "__uuid__": "554b1c70-2ff4-4adf-a8e9-0349143f9aae"
     },
     "fileId": "62FDxS9MRH5qG28vTZOwSR",
     "sync": false
@@ -259,8 +259,8 @@
     "_useOriginalSize": false,
     "_string": "Thành Công\n",
     "_N$string": "Thành Công\n",
-    "_fontSize": 15,
-    "_lineHeight": 10,
+    "_fontSize": 16,
+    "_lineHeight": 20,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -279,7 +279,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "476a1edf-1df5-4c53-857a-b0052b74914c"
+      "__uuid__": "554b1c70-2ff4-4adf-a8e9-0349143f9aae"
     },
     "fileId": "0dtZYM0DBCIZjXi0OzIL9X",
     "sync": false
@@ -320,7 +320,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 320,
-      "height": 25.2
+      "height": 85.19999999999999
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -330,7 +330,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -146,
-      "y": 4.699999999999996,
+      "y": 19.999999999999986,
       "z": 0
     },
     "_scale": {
@@ -380,7 +380,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 25.2
+      "height": 85.19999999999999
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -425,8 +425,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Disssss, chào em Minh ",
-    "_N$string": "Disssss, chào em Minh ",
+    "_string": "Disssss, chào em Minh Disssss, chào em Minh Disssss, chào em Minh \n",
+    "_N$string": "Disssss, chào em Minh Disssss, chào em Minh Disssss, chào em Minh \n",
     "_fontSize": 18,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -447,7 +447,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "476a1edf-1df5-4c53-857a-b0052b74914c"
+      "__uuid__": "554b1c70-2ff4-4adf-a8e9-0349143f9aae"
     },
     "fileId": "67OPYFjNVDSZLtsN/CFSGn",
     "sync": false
@@ -495,7 +495,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 320,
-      "height": 25.2
+      "height": 85.19999999999999
     },
     "_resize": 1,
     "_N$layoutType": 2,
@@ -523,20 +523,42 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "476a1edf-1df5-4c53-857a-b0052b74914c"
+      "__uuid__": "554b1c70-2ff4-4adf-a8e9-0349143f9aae"
     },
     "fileId": "13ph6k4Y9Jj7KjUbVhj/8N",
     "sync": false
   },
   {
-    "__type__": "0576616RWpPnK+kR5taHLG1",
+    "__type__": "cc.Layout",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "text": null,
+    "_layoutSize": {
+      "__type__": "cc.Size",
+      "width": 400,
+      "height": 130.39999999999998
+    },
+    "_resize": 1,
+    "_N$layoutType": 2,
+    "_N$padding": 0,
+    "_N$cellSize": {
+      "__type__": "cc.Size",
+      "width": 40,
+      "height": 40
+    },
+    "_N$startAxis": 0,
+    "_N$paddingLeft": 0,
+    "_N$paddingRight": 0,
+    "_N$paddingTop": 0,
+    "_N$paddingBottom": 0,
+    "_N$spacingX": 0,
+    "_N$spacingY": 0,
+    "_N$verticalDirection": 1,
+    "_N$horizontalDirection": 0,
+    "_N$affectedByScale": false,
     "_id": ""
   },
   {
@@ -545,7 +567,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "476a1edf-1df5-4c53-857a-b0052b74914c"
+      "__uuid__": "554b1c70-2ff4-4adf-a8e9-0349143f9aae"
     },
     "fileId": "1cUSe70OxITrO2pIpe4mMc",
     "sync": false

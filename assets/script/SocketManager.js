@@ -1,13 +1,10 @@
 const io = require('socket.io-client');
 
-
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        // serverUrl: 'http://172.16.1.41:3000',
-        serverUrl: 'http://192.168.1.36:3000',
-
+        serverUrl: 'http://172.16.0.230:12345',
     },
 
     onLoad() {
@@ -44,7 +41,7 @@ cc.Class({
 
     reciveToServer(callback) {
         this.socket.on("receive", (data) => {
-            callback(data)
+            callback(data);
         });
     },
 });

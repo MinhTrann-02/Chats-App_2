@@ -41,7 +41,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 400,
-      "height": 50
+      "height": 60
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -104,8 +104,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
-      "height": 22.6
+      "width": 88.06,
+      "height": 56.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -114,7 +114,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -140.931,
+      "x": -142.931,
       "y": 27.082,
       "z": 0
     },
@@ -174,8 +174,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -39.069,
-      "y": -29.012,
+      "x": -32.069,
+      "y": -32.012,
       "z": 0
     },
     "_scale": {
@@ -255,8 +255,8 @@
     "_useOriginalSize": false,
     "_string": "Thành Công\n",
     "_N$string": "Thành Công\n",
-    "_fontSize": 15,
-    "_lineHeight": 10,
+    "_fontSize": 16,
+    "_lineHeight": 25,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -326,7 +326,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -146,
-      "y": 4.699999999999996,
+      "y": 3.6999999999999957,
       "z": 0
     },
     "_scale": {
