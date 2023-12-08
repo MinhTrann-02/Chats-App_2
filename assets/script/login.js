@@ -1,20 +1,26 @@
-const TOTAL_AVATAR = 6;
+const data = {
+    id: '',
+    username: '',
+    avatarOption: '',
+    msg: ''
+};
 const Module = require("module");
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
+        socketManager: require('SocketManager'),
         loginPopup: cc.Node,
         userNameInput: cc.EditBox,
         avatarPopup: cc.Node,
         listAvatar: [cc.SpriteFrame],
         chatPopup: cc.Node,
+        _myID: null
     },
 
-    onload() {
-        this.loginPopup.active = true;
-        this.avatarPopup.children[0].color = cc.Color.WHITE;
+    onLoad() {
+        this.socketManager.myID((myID) => { this._myID = myID });
     },
 
     onSelectAvatar(event, avatarOption) {
@@ -32,19 +38,20 @@ cc.Class({
             return window.alert("Your user name is less than 2 characters");
         }
         if (this.avatarOption == undefined) this.avatarOption = 0;
-        this.dataUser = {
-            id: '',
-            userName: this.userNameInput.string,
-            avatarOption: this.avatarOption,
-            mg: ''
-        }
-        Module.setSharedData(this.dataUser);
-        
+        this.register(data);
+        this.socketManager.registerToServer(data);
+        Module.setSharedData(data);
         this.onMessageScreen();
     },
 
     onMessageScreen() {
         this.loginPopup.active = false;
         this.chatPopup.active = true;
+    },
+
+    register() {
+        data.id = this._myID;
+        data.username = this.userNameInput.string;
+        data.avatarOption = this.avatarOption;
     },
 });

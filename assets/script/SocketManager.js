@@ -44,4 +44,16 @@ cc.Class({
             callback(data);
         });
     },
+
+    registerToServer(data) {
+        if (this.socket && this.socket.connected) {
+            this.socket.emit("register", data);
+        }
+    },
+
+    connectedToServer(callback) {
+        this.socket.on("userConnected", (data) => {
+            callback(data);
+        });
+    },
 });

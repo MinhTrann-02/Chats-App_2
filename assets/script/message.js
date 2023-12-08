@@ -1,16 +1,9 @@
-const data = {
-    id: '',
-    userName: '',
-    avatarOption: '',
-    msg: ''
-};
 const Module = require("module");
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        serverUrl: 'https://sv-24fd.onrender.com',
         socketManager: require('SocketManager'),
         sendPrefab: [cc.Prefab],
         recivePrefab: [cc.Prefab],
@@ -18,22 +11,27 @@ cc.Class({
         messInput: cc.EditBox,
         avatarList: [cc.SpriteFrame],
         scrollView: cc.ScrollView,
-        _myID: null
     },
 
     onLoad() {
+        this.messInput.focus();
         this.dataLogin = Module.getSharedData();
         let newMess = new cc.Node;
-        this.scheduleOnce(() => {
-            this.newConnectedPrefab(newMess, this.dataLogin.userName);
-        }, 0.1);
 
-        this.messInput.focus();
-        this.socketManager.myID((myID) => { this._myID = myID });
+        this.socketManager.connectedToServer((data) => {
+            this.scheduleOnce(() => {
+                let notification = data.split(' ');
+                let name = notification[0];
+                if (this.dataLogin.username !== name) {
+                    this.newConnectedPrefab(newMess, data);
+                }
+            }, 0.1);
+        });
+
         this.socketManager.reciveToServer((data) => {
             let avt = data.avatarOption;
-            if (data.id !== this._myID) {
-                this.newRecivePrefab(newMess, data.msg, data.userName, avt);
+            if (data.id !== this.dataLogin.id) {
+                this.newRecivePrefab(newMess, data.msg, data.username, avt);
             } else {
                 this.newSendPrefab(newMess, data.msg, avt);
             }
@@ -44,11 +42,9 @@ cc.Class({
     onEnter() {
         let messInput = this.messInput.string.trim();
         if (messInput != '') {
-            data.id = this._myID;
-            data.userName = this.dataLogin.userName;
-            data.avatarOption = this.dataLogin.avatarOption;
-            data.msg = messInput;
-            this.socketManager.sendToServer(data);
+            this.dataLogin.msg = messInput;
+
+            this.socketManager.sendToServer(this.dataLogin);
             this.messInput.string = '';
         }
         this.scheduleOnce(() => {
@@ -58,7 +54,7 @@ cc.Class({
 
     newConnectedPrefab(newMess, name) {
         newMess = cc.instantiate(this.connectedPrefab);
-        newMess._children[0]._components[0]._string = `${name} đã kết nối`;
+        newMess._children[0]._components[0]._string = name;
         this.node.addChild(newMess);
     },
 
@@ -75,16 +71,16 @@ cc.Class({
         this.node.addChild(newMess);
     },
 
-    newRecivePrefab(newMess, message, userName, avt) {
+    newRecivePrefab(newMess, message, username, avt) {
         if (message.length < 33 && message !== '') {
             newMess = cc.instantiate(this.recivePrefab[0]);
             newMess._children[0]._children[0]._components[0]._spriteFrame = this.avatarList[avt];
-            newMess._children[0]._components[0]._string = userName;
+            newMess._children[0]._components[0]._string = username;
             newMess._children[1]._children[0]._components[0]._string = message;
         } else {
             newMess = cc.instantiate(this.recivePrefab[1]);
             newMess._children[0]._children[0]._components[0]._spriteFrame = this.avatarList[avt];
-            newMess._children[0]._components[0]._string = userName;
+            newMess._children[0]._components[0]._string = username;
             newMess._children[1]._children[0]._components[0]._string = message;
         }
         this.node.addChild(newMess);
