@@ -16,7 +16,7 @@ const userDataInput = {
     msg: ''
 };
 
-const iconOptions = ["🙂", "😭", "😍", "😂", "👍", "👎"];
+// const iconOptions = ["🙂", "😭", "😍", "😂", "👍", "👎"];
 
 io.on('connection', (socket) => {
     console.log(`User connected`);
@@ -27,14 +27,16 @@ io.on('connection', (socket) => {
     });
 
     socket.on('send', (data) => {
-        console.log(data,socket.id)
-        // io.emit('receive', {id:socket.id,data})
-        if (iconOptions.includes(data)) {
-            io.emit('receive', { id: socket.id, type: 'icon', content: data });
-        }
-        else {
-            io.emit('receive', { id: socket.id, type: 'text', content: data });
-        }
+        data.id = socket.id;
+        
+        console.log(data)
+        io.emit('receive', data)
+        // if (iconOptions.includes(data)) {
+        //     io.emit('receive', { id: socket.id, type: 'icon', content: data });
+        // }
+        // else {
+        //     io.emit('receive', { id: socket.id, type: 'text', content: data });
+        // }
     });
 
     // socket.on('disconnect', (user) => {
@@ -42,7 +44,7 @@ io.on('connection', (socket) => {
     // });
 });
 
-server.listen(3000, () => {
-    console.log('Server running at http://localhost:3000');
+server.listen(12345, () => {
+    console.log('Server running at http://localhost:12345');
 });
 

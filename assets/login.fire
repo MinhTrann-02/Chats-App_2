@@ -524,7 +524,7 @@
     "_is3DNode": false,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "21CIsKcNNPhIwlOgQikKMJ"
+    "_id": "a7LWqANypE0LE7yVWIM0JJ"
   },
   {
     "__type__": "cc.Label",
@@ -554,7 +554,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "9cIafsOD9PZa931YzZIPSo"
+    "_id": "a98fjMmWJDEojj8GLPCf9m"
   },
   {
     "__type__": "cc.PrivateNode",
@@ -613,7 +613,7 @@
     "_is3DNode": false,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "e0U/3xJzdNpKGxPNXjgC9L"
+    "_id": "aeUmXF5w9D3rlrvaNEJSqU"
   },
   {
     "__type__": "cc.Label",
@@ -643,7 +643,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "6aieCyP1RH9bStgjVswA85"
+    "_id": "acurMTJQ5MSYZAfFcuqlUL"
   },
   {
     "__type__": "cc.RichText",
@@ -1621,7 +1621,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 158,
+      "width": 230,
       "height": 40
     },
     "_anchorPoint": {
@@ -1631,7 +1631,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -78,
+      "x": -113,
       "y": 20,
       "z": 0
     },
@@ -1835,7 +1835,7 @@
     "_useOriginalSize": false,
     "_string": "",
     "returnType": 0,
-    "maxLength": 8,
+    "maxLength": 16,
     "_tabIndex": 0,
     "editingDidBegan": [],
     "textChanged": [],
@@ -3166,11 +3166,32 @@
       "__id__": 7
     },
     "userNameInput": {
-      "__id__": 30
+      "__id__": 40
     },
     "avatarPopup": {
       "__id__": 41
     },
+    "listAvatar": [
+      {
+        "__uuid__": "2ab75c6f-5c93-4c94-aafc-ba6b9481ca61"
+      },
+      {
+        "__uuid__": "aa9ecd15-865f-4370-ab52-498f38126306"
+      },
+      {
+        "__uuid__": "ddf17d23-43e0-425a-b061-634ba3e93377"
+      },
+      {
+        "__uuid__": "5950c67e-0a27-43c6-b32d-a09331949409"
+      },
+      {
+        "__uuid__": "c2ffed29-0896-4e90-995b-62c45bdb19ea"
+      },
+      {
+        "__uuid__": "90978220-4561-4449-a8b9-b853c5053061"
+      }
+    ],
+    "chatPopup": null,
     "_id": "28UYuTQ9hDBoIyCi336n5/"
   },
   {
